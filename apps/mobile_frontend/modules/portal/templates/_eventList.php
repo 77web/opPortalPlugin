@@ -1,4 +1,4 @@
-<?php if (count($communityEvent)): ?>
+<?php if ($isEnabled): ?>
 <?php
 $list = array();
 foreach ($communityEvent as $event)
@@ -20,6 +20,13 @@ $options = array(
     link_to(__('More'), '@communityTopic_search_all?type=event')
   ),
 );
+
+if(count($communityEvent)==0)
+{
+  $options['partsInfo'] = __('No data');
+  unset($options['moreInfo']);
+}
+
 op_include_list('communityList', $list, $options);
 ?>
 

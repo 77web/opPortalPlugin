@@ -5,7 +5,7 @@
 * @package OpenPNE/opPortalPlugin
 * @subpackage action
 * @author Hiromi Hishida<info@77-web.com>
-* @version 0.9
+* @version 0.9.1
 */
 class opPortalPluginPortalComponents extends sfComponents
 {
@@ -15,8 +15,8 @@ class opPortalPluginPortalComponents extends sfComponents
    */
   public function executeDiaryList($request)
   {
-    $this->diaryList = array();
-    if(opPlugin::getInstance('opDiaryPlugin')->getIsActive())
+    $this->isEnabled = opPlugin::getInstance('opDiaryPlugin')->getIsActive();
+    if($this->isEnabled)
     {
       $max = $this->gadget->getConfig('max', 5);
       $this->diaryList = Doctrine::getTable('Diary')->getDiaryList($max, DiaryTable::PUBLIC_FLAG_OPEN);
@@ -29,8 +29,8 @@ class opPortalPluginPortalComponents extends sfComponents
    */
   public function executeTopicList($request)
   {
-    $this->communityTopic = array();
-    if(opPlugin::getInstance('opCommunityTopicPlugin')->getIsActive())
+    $this->isEnabled = opPlugin::getInstance('opCommunityTopicPlugin')->getIsActive();
+    if($this->isEnabled)
     {
       $max = $this->gadget->getConfig('max', 5);
       $table = Doctrine::getTable('CommunityTopic');
@@ -46,8 +46,8 @@ class opPortalPluginPortalComponents extends sfComponents
    */
   public function executeEventList($request)
   {
-    $this->communityEvent = array();
-    if(opPlugin::getInstance('opCommunityTopicPlugin')->getIsActive())
+    $this->isEnabled = opPlugin::getInstance('opCommunityTopicPlugin')->getIsActive();
+    if($this->isEnabled)
     {
       $max = $this->gadget->getConfig('max', 5);
       $table = Doctrine::getTable('CommunityEvent');

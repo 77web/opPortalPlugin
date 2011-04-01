@@ -10,6 +10,10 @@
         <source>Recently Community Events</source>
         <target>全体の最新イベント</target>
       </trans-unit>
+      <trans-unit id="">
+        <source>No data</source>
+        <target>書き込みはありません。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
