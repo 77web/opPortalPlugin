@@ -15,7 +15,7 @@ class opPortalPluginPortalComponents extends sfComponents
    */
   public function executeDiaryList($request)
   {
-    $this->isEnabled = opPlugin::getInstance('opDiaryPlugin')->getIsActive();
+    $this->isEnabled = opPlugin::getInstance('opDiaryPlugin')->getIsActive() && sfConfig::get('app_op_diary_plugin_is_open', true);
     if($this->isEnabled)
     {
       $max = $this->gadget->getConfig('max', 5);
@@ -63,7 +63,7 @@ class opPortalPluginPortalComponents extends sfComponents
    */
   public function executeAlbumList($request)
   {
-    $this->isEnabled = opPlugin::getInstance('opAlbumPlugin')->getIsActive();
+    $this->isEnabled = opPlugin::getInstance('opAlbumPlugin')->getIsActive() && sfConfig::get('app_op_album_plugin_is_open', false);
     if($this->isEnabled)
     {
       $max = $this->gadget->getConfig('max', 5);
