@@ -1,0 +1,20 @@
+diaryList:
+  caption:
+    ja_JP: "全体の最新外部公開日記"
+  description:
+    ja_JP: "全体の外部公開日記を新着順に表示します。"
+  component: [portal, diaryList]
+  config:
+    max:
+      Name:      "max"
+      Caption:   "最大表示件数"
+      FormType:  "select"
+      ValueType:  "int"
+      IsRequired: true
+      Default:    5
+      Choices:
+        1: 1
+        3: 3
+        5: 5
+        7: 7
+        10: 10
