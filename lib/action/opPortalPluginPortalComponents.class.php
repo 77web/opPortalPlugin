@@ -56,4 +56,18 @@ class opPortalPluginPortalComponents extends sfComponents
       $this->communityEvent = $pager->getResults();
     }
   }
+
+  /*
+   * Executes album list component
+   * @param sfWebRequest $request A request object
+   */
+  public function executeAlbumList($request)
+  {
+    $this->isEnabled = opPlugin::getInstance('opAlbumPlugin')->getIsActive();
+    if($this->isEnabled)
+    {
+      $max = $this->gadget->getConfig('max', 5);
+      $this->albumList = Doctrine::getTable('Album')->getAlbumList($max, AlbumTable::PUBLIC_FLAG_OPEN);
+    }
+  }
 }
