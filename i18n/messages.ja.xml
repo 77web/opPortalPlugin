@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="">
+        <source>Recently Community Topics</source>
+        <target>全体の最新トピック</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Recently Community Events</source>
+        <target>全体の最新イベント</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
