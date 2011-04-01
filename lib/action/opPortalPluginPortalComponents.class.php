@@ -34,7 +34,7 @@ class opPortalPluginPortalComponents extends sfComponents
     {
       $max = $this->gadget->getConfig('max', 5);
       $table = Doctrine::getTable('CommunityTopic');
-      $query = $table->createQuery('t')->orderBy('t.updated_at DESC');
+      $query = $table->createQuery('t')->orderBy('t.updated_at DESC')->leftJoin('t.Community c')->leftJoin('c.CommunityConfig cc')->addWhere('cc.name = ? AND cc.value != ?', array('public_flag', 'auth_commu_member'));
       $pager = $table->getResultListPager($query, 1, $max);
       $this->communityTopic = $pager->getResults();
     }
@@ -51,7 +51,7 @@ class opPortalPluginPortalComponents extends sfComponents
     {
       $max = $this->gadget->getConfig('max', 5);
       $table = Doctrine::getTable('CommunityEvent');
-      $query = $table->createQuery('t')->orderBy('t.updated_at DESC');
+      $query = $table->createQuery('t')->orderBy('t.updated_at DESC')->leftJoin('t.Community c')->leftJoin('c.CommunityConfig cc')->addWhere('cc.name = ? AND cc.value != ?', array('public_flag', 'auth_commu_member'));
       $pager = $table->getResultListPager($query, 1, $max);
       $this->communityEvent = $pager->getResults();
     }
