@@ -1,7 +1,7 @@
 <?php if ($isEnabled): ?>
 <?php use_helper('opDiary') ?>
 
-<div id="homeRecentList_<?php echo $gadget->id ?>" class="dparts portalRecentList"><div class="parts">
+<div id="homeRecentList_<?php echo $gadget->id ?>" class="dparts homeRecentList"><div class="parts">
 <div class="partsHeading"><h3><?php echo __('Recently Posted Diaries of All') ?></h3></div>
 <div class="block">
 
