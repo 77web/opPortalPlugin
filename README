@@ -1,19 +1,22 @@
 OpenPNE3にOpenPNE2のSNSポータルクリエイター相当の機能をつけるプラグインです。
 
 version 0.9.0
-・外部公開日記一覧（opDiaryPluginが必要）
-・コミュニティトピックタイトル一覧（opCommunityTopicPluginが必要、外部公開は無いのでタイトルとリンクのみ）
-・コミュニティイベントタイトル一覧（opCommunityTopicPluginが必要、外部公開は無いのでタイトルとリンクのみ）
+* 外部公開日記一覧（opDiaryPluginが必要）
+* コミュニティトピックタイトル一覧（opCommunityTopicPluginが必要、外部公開は無いのでタイトルとリンクのみ）
+* コミュニティイベントタイトル一覧（opCommunityTopicPluginが必要、外部公開は無いのでタイトルとリンクのみ）
 
 version 0.9.1
-・利用可能ガジェットに外部公開アルバム一覧（opAlbumPluginが必要、pc_frontendのみ）を追加
+* 利用可能ガジェットに外部公開アルバム一覧（opAlbumPluginが必要、pc_frontendのみ）を追加
 ※opAlbumPluginで外部公開有効設定にすることが必要です。
 opAlbumPlugin/config/app.ymlを設置し、
 all:
   op_album_plugin_is_open: true
 と記述してください。
-・コミュニティの公開範囲を考慮（topic,eventの公開範囲が「全体に公開」のコミュのみ対象にしました）
+* コミュニティの公開範囲を考慮（topic,eventの公開範囲が「全体に公開」のコミュのみ対象にしました）
 
 
 version 0.9.1.1
-・コミュニティトピック・コミュニティイベントの件数設定の名前が間違っていたのを修正
+* コミュニティトピック・コミュニティイベントの件数設定の名前が間違っていたのを修正
+
+version 0.9.2
+* 日記一覧ガジェットにつけるCSSクラス名を他のガジェットと揃えました。
